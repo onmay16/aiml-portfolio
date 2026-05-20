@@ -1,0 +1,26 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  artifact: CollectionEntry<'artifacts'>;
+}
+
+const { artifact } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const slug = artifact.slug;
+const { title, introduction, tools } = artifact.data;
+---
+
+<a href={`${base}artifacts/${slug}/`} class="artifact-card animate-in">
+  <div class="artifact-card-body">
+    <h3>{title}</h3>
+    <p>{introduction}</p>
+    {tools.length > 0 && (
+      <div class="artifact-card-tools">
+        {tools.slice(0, 4).map((tool) => (
+          <span class="tag">{tool}</span>
+        ))}
+      </div>
+    )}
+  </div>
+</a>

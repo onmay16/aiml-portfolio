@@ -1,0 +1,39 @@
+---
+interface Props {
+  title: string;
+  open?: boolean;
+}
+
+const { title, open = false } = Astro.props;
+const id = `collapsible-${title.replace(/\s+/g, '-').toLowerCase()}`;
+---
+
+<div class="collapsible" data-open={open ? 'true' : 'false'}>
+  <button
+    type="button"
+    class="collapsible-trigger"
+    aria-expanded={open}
+    aria-controls={`${id}-panel`}
+    id={`${id}-trigger`}
+  >
+    {title}
+    <svg class="collapsible-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" />
+    </svg>
+  </button>
+  <div class="collapsible-panel" id={`${id}-panel`} role="region" aria-labelledby={`${id}-trigger`}>
+    <slot />
+  </div>
+</div>
+
+<script>
+  document.addEventListener('click', (event) => {
+    const trigger = (event.target as HTMLElement).closest('.collapsible-trigger');
+    if (!trigger) return;
+    const collapsible = trigger.closest('.collapsible');
+    if (!collapsible) return;
+    const isOpen = collapsible.getAttribute('data-open') === 'true';
+    collapsible.setAttribute('data-open', isOpen ? 'false' : 'true');
+    trigger.setAttribute('aria-expanded', String(!isOpen));
+  });
+</script>

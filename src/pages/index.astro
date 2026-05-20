@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import { site } from '../data/site';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Home">
+  <section class="hero">
+    <div class="container">
+      <span class="hero-tag">{site.tagline}</span>
+      <h1>{site.name}</h1>
+      <p class="hero-lead">
+        Welcome to my professional portfolio for AIML-501. Explore my bio, value proposition, and
+        course artifacts that demonstrate my growth in AI and machine learning.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#about">Read my bio</a>
+        <a class="btn btn-secondary" href={`${base}artifacts/`}>View all artifacts</a>
+      </div>
+    </div>
+  </section>
+
+  <Section id="about" label="About" title="Professional Bio">
+    {site.bio.split('\n\n').map((paragraph) => (
+      <p>{paragraph}</p>
+    ))}
+  </Section>
+
+  <Section id="value-proposition" label="Value" title="Personal Value Proposition" alt>
+    <p class="value-prop-headline">{site.valueProposition.headline}</p>
+    <ul class="value-list">
+      {site.valueProposition.bullets.map((item) => (
+        <li>
+          <strong>{item.title}</strong>
+          <br />
+          {item.text}
+        </li>
+      ))}
+    </ul>
+  </Section>
+</BaseLayout>

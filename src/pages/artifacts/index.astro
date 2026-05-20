@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArtifactFilter from '../../components/ArtifactFilter';
+import { getCollection } from 'astro:content';
+
+const artifacts = await getCollection('artifacts');
+const base = import.meta.env.BASE_URL;
+
+const summaries = artifacts.map((a) => ({
+  slug: a.slug,
+  title: a.data.title,
+  introduction: a.data.introduction,
+  tools: a.data.tools,
+  href: `${base}artifacts/${a.slug}/`,
+}));
+---
+
+<BaseLayout title="Artifacts" description="Portfolio artifacts for AIML-501 with searchable course work.">
+  <div class="page-header">
+    <div class="container">
+      <h1>Artifacts</h1>
+      <p>
+        Each artifact includes title, introduction, description, objective, process, tools, value
+        proposition, and tangible deliverables per AIML-501 requirements. Reflections are submitted
+        in Brightspace only—not published here.
+      </p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <ArtifactFilter client:load artifacts={summaries} />
+    </div>
+  </section>
+</BaseLayout>
