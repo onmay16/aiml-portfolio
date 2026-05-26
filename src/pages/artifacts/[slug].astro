@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import AlgorithmFramework from '../../components/AlgorithmFramework';
+import NeuralNetworkSlides from '../../components/NeuralNetworkSlides';
 import DeliverablesGallery from '../../components/DeliverablesGallery';
 import { getCollection } from 'astro:content';
 
@@ -62,6 +63,17 @@ const { Content } = await artifact.render();
         </section>
       )}
 
+      {artifact.data.interactive === 'neural-network-slides' && (
+        <section class="detail-section" id="visual-presentation">
+          <h2>Visual Presentation</h2>
+          <p>
+            Interactive slide deck covering neural network architecture and six core components. Use the
+            arrows or dots below to navigate like a presentation.
+          </p>
+          <NeuralNetworkSlides client:load />
+        </section>
+      )}
+
       <section class="detail-section">
         <h2>Objective</h2>
         <p>{objective}</p>
@@ -111,7 +123,6 @@ const { Content } = await artifact.render();
       {deliverables.length > 0 && (
         <section class="detail-section">
           <h2>Deliverables</h2>
-          <p>Tangible evidence for this artifact—screenshots, files, or links.</p>
           <DeliverablesGallery client:load deliverables={deliverables} baseUrl={base} />
         </section>
       )}
