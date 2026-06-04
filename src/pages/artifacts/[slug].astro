@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import AlgorithmFramework from '../../components/AlgorithmFramework';
 import NeuralNetworkSlides from '../../components/NeuralNetworkSlides';
+import AIInfrastructureSlides from '../../components/AIInfrastructureSlides';
 import DeliverablesGallery from '../../components/DeliverablesGallery';
 import { getCollection } from 'astro:content';
 
@@ -71,6 +72,17 @@ const { Content } = await artifact.render();
             arrows or dots below to navigate like a presentation.
           </p>
           <NeuralNetworkSlides client:load />
+        </section>
+      )}
+
+      {artifact.data.interactive === 'ai-infrastructure-slides' && (
+        <section class="detail-section" id="visual-presentation">
+          <h2>Visual Presentation</h2>
+          <p>
+            Interactive slide deck covering LLM training infrastructure, resource costs, and real-world model
+            examples. Use the arrows or dots below to navigate like a presentation.
+          </p>
+          <AIInfrastructureSlides client:load />
         </section>
       )}
 

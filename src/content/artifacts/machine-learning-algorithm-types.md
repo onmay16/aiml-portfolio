@@ -35,4 +35,4 @@ interactive: algorithm-framework
 
 ## Reflection
 
-Building this framework reinforced that algorithm choice starts with **learning style** (supervised vs. unsupervised) and **data modality** (tabular, images, text), not with model hype. Organizing eight algorithms into a single taxonomy helped me see where methods overlap—for example, SVMs span tabular and some vision tasks, while Transformers anchor both NLP and generative AI. Presenting this as an interactive portfolio artifact also pushed me to write for multiple audiences: concise labels in the tree, with deeper explanations available on click.
+Building this framework reinforced that algorithm choice starts with **learning style** (supervised vs. unsupervised) and **data modality** (tabular, images, text), not with model hype. Organizing eight algorithms into a single taxonomy helped me see where methods overlap. For example, SVMs span tabular and some vision tasks, while Transformers anchor both NLP and generative AI. Presenting this as an interactive portfolio artifact also pushed me to write for multiple audiences: concise labels in the tree, with deeper explanations available on click.

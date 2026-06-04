@@ -27,7 +27,7 @@ const unsupervisedDomains: { domain: Domain; ids: string[] }[] = [
 ];
 
 const CLICK_HINT =
-  'Each algorithm block below is clickable—select one to view its type, domains, use cases, and how it works.';
+  'Each algorithm block below is clickable. Select one to view its type, domains, use cases, and how it works.';
 
 function learningStyleLabel(style: AlgorithmNode['learningStyle']) {
   return style === 'supervised' ? 'Supervised' : 'Unsupervised';

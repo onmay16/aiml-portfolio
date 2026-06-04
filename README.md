@@ -6,11 +6,11 @@ Built with [Astro](https://astro.build) and React islands for interactivity (the
 
 ## Features
 
-- **Home** — Bio, value proposition, featured artifacts
-- **Artifacts** — Searchable grid of all course artifacts
-- **Artifact detail** — Full AIML-501 template (title, introduction, description, objective, process, tools, value proposition, references, deliverables)
-- **Light / dark mode** — Persists preference; respects system default
-- **Accessible** — Skip link, keyboard navigation, reduced-motion support
+- **Home**: Bio, value proposition, featured artifacts
+- **Artifacts**: Searchable grid of all course artifacts
+- **Artifact detail**: Full AIML-501 template (title, introduction, description, objective, process, tools, value proposition, references, deliverables)
+- **Light / dark mode**: Persists preference; respects system default
+- **Accessible**: Skip link, keyboard navigation, reduced-motion support
 
 > **Note:** Course reflections are submitted in Brightspace only. They are intentionally **not** included in this public portfolio.
 
@@ -36,7 +36,7 @@ Edit [`src/data/site.ts`](src/data/site.ts):
 
 - `name`, `email`, `github`, `linkedin`
 - `bio` and `valueProposition`
-- `featuredSlugs` — slugs of artifacts to highlight on the home page
+- `featuredSlugs`: slugs of artifacts to highlight on the home page
 
 ### Artifacts
 

@@ -9,7 +9,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = `Professional portfolio for AIML-501 at Indiana Wesleyan University — ${site.name}.` } = Astro.props;
+const { title, description = `Professional portfolio for AIML-501 at Indiana Wesleyan University | ${site.name}.` } = Astro.props;
 const fullTitle = title === 'Home' ? `${site.name} | AIML Portfolio` : `${title} | ${site.name}`;
 ---
 

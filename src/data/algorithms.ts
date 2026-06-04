@@ -128,7 +128,7 @@ export const algorithms: AlgorithmNode[] = [
       'Speeding up downstream algorithms by reducing feature count',
     ],
     explanation:
-      'PCA projects data onto orthogonal directions (principal components) that capture the most variance. By keeping only the top components, you reduce dimensionality while preserving structure—useful for exploration, preprocessing, and efficiency.',
+      'PCA projects data onto orthogonal directions (principal components) that capture the most variance. By keeping only the top components, you reduce dimensionality while preserving structure, useful for exploration, preprocessing, and efficiency.',
   },
 ];
 

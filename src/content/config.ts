@@ -23,7 +23,9 @@ const artifacts = defineCollection({
     deliverables: z.array(deliverableSchema).optional().default([]),
     thumbnail: z.string().optional(),
     featured: z.boolean().optional().default(false),
-    interactive: z.enum(['algorithm-framework', 'neural-network-slides']).optional(),
+    interactive: z
+      .enum(['algorithm-framework', 'neural-network-slides', 'ai-infrastructure-slides'])
+      .optional(),
   }),
 });
 

@@ -2,7 +2,7 @@
 title: Neural Network Components Visual Presentation
 introduction: >-
   An interactive slide presentation that defines and illustrates layers, neurons, weights, activation
-  functions, loss functions, and optimization algorithms—with a forward-flow architecture diagram and
+  functions, loss functions, and optimization algorithms, with a forward-flow architecture diagram and
   summary insights from TensorFlow Playground experimentation.
 description: >-
   This artifact translates complex neural network concepts into a professional visual presentation
@@ -28,7 +28,7 @@ valueProposition:
     non-technical stakeholders; this artifact demonstrates structured technical communication and hands-on
     Playground experimentation.
 references:
-  - 'TensorFlow Neural Network Playground — https://playground.tensorflow.org'
+  - 'TensorFlow Neural Network Playground: https://playground.tensorflow.org'
 featured: true
 interactive: neural-network-slides
 ---

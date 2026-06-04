@@ -293,10 +293,10 @@ function WeightsDiagram() {
         </div>
         <div className="nns-weight-legend">
           <span>
-            <em className="nns-weight-thick" /> larger weight — stronger influence
+            <em className="nns-weight-thick" /> larger weight: stronger influence
           </span>
           <span>
-            <em className="nns-weight-thin" /> smaller weight — weaker influence
+            <em className="nns-weight-thin" /> smaller weight: weaker influence
           </span>
         </div>
         <p className="nns-weight-loop">prediction error changes weights during training</p>
@@ -559,7 +559,7 @@ function SlideContent({ id, author }: { id: SlideId; author: string }) {
       return (
         <ContentSlide
           number={7}
-          title="Components 5–6: Loss Functions and Optimization Algorithms"
+          title="Components 5-6: Loss Functions and Optimization Algorithms"
           subtitle="Together, loss and optimization create the training feedback loop."
         >
           <LossOptimizationSlide />

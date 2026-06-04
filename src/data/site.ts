@@ -7,7 +7,7 @@ export const site = {
   linkedin: '',
   bio: `I am pursuing a Master of Science in Computer Information Systems at Indiana Wesleyan University, with coursework in AI and machine learning (AIML-501). Along with graduate study, I'm currently working as a software engineer in healthcare industry, building and maintaining systems in healthcare supply chain technology.
 
-My background combines bioinformatics training with production software experience. I am motivated by problems where thoughtful use of data and machine learning can improve outcomes for people and organizations—especially in healthcare and other high-stakes domains.
+My background combines bioinformatics training with production software experience. I am motivated by problems where thoughtful use of data and machine learning can improve outcomes for people and organizations, especially in healthcare and other high-stakes domains.
 
 As I progress through the AIML program, I am developing the habits of a lifelong learner: asking clear questions, documenting my process, and sharing work that others can learn from.`,
   valueProposition: {
@@ -16,7 +16,7 @@ As I progress through the AIML program, I am developing the habits of a lifelong
     bullets: [
       {
         title: 'Production-minded engineering',
-        text: 'I bring experience shipping and maintaining software in healthcare technology, so my AIML work emphasizes reliability, clarity, and outcomes—not experiments in isolation.',
+        text: 'I bring experience shipping and maintaining software in healthcare technology, so my AIML work emphasizes reliability, clarity, and outcomes, not experiments in isolation.',
       },
       {
         title: 'Clear communication for diverse audiences',
