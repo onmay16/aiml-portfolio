@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import AlgorithmFramework from '../../components/AlgorithmFramework';
 import NeuralNetworkSlides from '../../components/NeuralNetworkSlides';
 import AIInfrastructureSlides from '../../components/AIInfrastructureSlides';
+import ExplainabilityInfographic from '../../components/ExplainabilityInfographic';
 import DeliverablesGallery from '../../components/DeliverablesGallery';
 import { getCollection } from 'astro:content';
 
@@ -86,15 +87,32 @@ const { Content } = await artifact.render();
         </section>
       )}
 
-      <section class="detail-section">
-        <h2>Objective</h2>
-        <p>{objective}</p>
-      </section>
+      {artifact.data.interactive === 'explainability-infographic' && (
+        <section class="detail-section" id="visual-infographic">
+          <h2>Interactive Infographic</h2>
+          <ExplainabilityInfographic client:load />
+        </section>
+      )}
 
-      <section class="detail-section">
-        <h2>Process</h2>
-        <p>{process}</p>
-      </section>
+      {Content && (
+        <section class="detail-section artifact-markdown">
+          <Content />
+        </section>
+      )}
+
+      {objective && (
+        <section class="detail-section">
+          <h2>Objective</h2>
+          <p>{objective}</p>
+        </section>
+      )}
+
+      {process && (
+        <section class="detail-section">
+          <h2>Process</h2>
+          <p>{process}</p>
+        </section>
+      )}
 
       {tools.length > 0 && (
         <section class="detail-section">
@@ -107,19 +125,21 @@ const { Content } = await artifact.render();
         </section>
       )}
 
-      <section class="detail-section">
-        <h2>Value Proposition</h2>
-        <div class="value-prop-grid">
-          <div class="value-prop-box">
-            <h3>Unique Value</h3>
-            <p>{valueProposition.uniqueValue}</p>
+      {valueProposition && (
+        <section class="detail-section">
+          <h2>Value Proposition</h2>
+          <div class="value-prop-grid">
+            <div class="value-prop-box">
+              <h3>Unique Value</h3>
+              <p>{valueProposition.uniqueValue}</p>
+            </div>
+            <div class="value-prop-box">
+              <h3>Relevance</h3>
+              <p>{valueProposition.relevance}</p>
+            </div>
           </div>
-          <div class="value-prop-box">
-            <h3>Relevance</h3>
-            <p>{valueProposition.relevance}</p>
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {references && references.length > 0 && (
         <section class="detail-section">
@@ -136,12 +156,6 @@ const { Content } = await artifact.render();
         <section class="detail-section">
           <h2>Deliverables</h2>
           <DeliverablesGallery client:load deliverables={deliverables} baseUrl={base} />
-        </section>
-      )}
-
-      {Content && (
-        <section class="detail-section">
-          <Content />
         </section>
       )}
     </div>

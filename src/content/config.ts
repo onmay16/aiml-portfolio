@@ -12,19 +12,26 @@ const artifacts = defineCollection({
     title: z.string(),
     introduction: z.string(),
     description: z.string(),
-    objective: z.string(),
-    process: z.string(),
-    tools: z.array(z.string()),
-    valueProposition: z.object({
-      uniqueValue: z.string(),
-      relevance: z.string(),
-    }),
+    objective: z.string().optional(),
+    process: z.string().optional(),
+    tools: z.array(z.string()).optional().default([]),
+    valueProposition: z
+      .object({
+        uniqueValue: z.string(),
+        relevance: z.string(),
+      })
+      .optional(),
     references: z.array(z.string()).optional().default([]),
     deliverables: z.array(deliverableSchema).optional().default([]),
     thumbnail: z.string().optional(),
     featured: z.boolean().optional().default(false),
     interactive: z
-      .enum(['algorithm-framework', 'neural-network-slides', 'ai-infrastructure-slides'])
+      .enum([
+        'algorithm-framework',
+        'neural-network-slides',
+        'ai-infrastructure-slides',
+        'explainability-infographic',
+      ])
       .optional(),
   }),
 });
