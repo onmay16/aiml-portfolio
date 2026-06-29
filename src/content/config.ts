@@ -31,6 +31,7 @@ const artifacts = defineCollection({
         'neural-network-slides',
         'ai-infrastructure-slides',
         'explainability-infographic',
+        'model-selection-matrix',
       ])
       .optional(),
   }),

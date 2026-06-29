@@ -4,6 +4,7 @@ import AlgorithmFramework from '../../components/AlgorithmFramework';
 import NeuralNetworkSlides from '../../components/NeuralNetworkSlides';
 import AIInfrastructureSlides from '../../components/AIInfrastructureSlides';
 import ExplainabilityInfographic from '../../components/ExplainabilityInfographic';
+import ModelSelectionMatrix from '../../components/ModelSelectionMatrix';
 import DeliverablesGallery from '../../components/DeliverablesGallery';
 import { getCollection } from 'astro:content';
 
@@ -91,6 +92,17 @@ const { Content } = await artifact.render();
         <section class="detail-section" id="visual-infographic">
           <h2>Interactive Infographic</h2>
           <ExplainabilityInfographic client:load />
+        </section>
+      )}
+
+      {artifact.data.interactive === 'model-selection-matrix' && (
+        <section class="detail-section" id="decision-matrix">
+          <h2>Interactive Decision Matrix</h2>
+          <p>
+            Explore five pre-trained models across NLP, vision, and tabular domains. Click a table row,
+            trade-off insight, or recommendation to see expanded analysis below the matrix.
+          </p>
+          <ModelSelectionMatrix client:load />
         </section>
       )}
 
